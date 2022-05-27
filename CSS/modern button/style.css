@@ -1,0 +1,89 @@
+
+*
+{/* Define a fonte e as margens de toda a tela */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace';
+}
+body
+{/* Centraliza o body na tela e define o estilo geral do body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(39, 38, 38);
+    flex-direction: column;
+    gap: 30px;
+}
+a
+{/* Define o estilo do botão */
+    position: relative;
+    background: #fff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    letter-spacing: 0.3em;
+    font-weight: 400;
+    padding: 10px 30px;
+    transition: 0.5s;
+}
+a:hover
+{/* define quando passar o mouse em cima */
+    letter-spacing: 0.20em;
+    box-shadow: 0 0 35px var(--a);  
+    color: var(--a);
+    /* utilizamos a variavel para que quando passar o mouse em cima, troca a cor do backgroud definido no index.html */
+    background: var(--a); 
+}
+a::before
+{/* define o estilo dentro do botão, deixando uma borda*/
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background:rgb(39, 38, 38);
+}
+a span
+{/* Define a box "a::before" para ficar atrás do texto  */
+    position: relative;
+    z-index: 1;
+}
+a i
+{/* Define o bloco para adicionar a linha de cima*/ 
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+a i::before{/* cria a linha de cima e define seu estilo */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 80%;
+    width: 10px;
+    height: 4px;
+    background: rgb(39, 38, 38);
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+a:hover i::before
+{/* realiza o movimento da linha de cima*/
+    width: 20px;
+    left: 20%;
+}
+
+a i::after{/* cria a linha de baixo define seu estilo */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 10px;
+    height: 4px;
+    background: rgb(39, 38, 38);
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+a:hover i::after
+{/* realiza o movimento da linha de baixo*/
+    width: 20px;
+    left: 80%;
+}
